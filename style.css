@@ -1,0 +1,96 @@
+body {
+    font-family: Playfair Display;
+    margin: auto;
+    padding: 0;
+    background-color: #ffffff; 
+    color: #333;
+}
+
+header {
+    background-color: #feccc7; 
+    color: #fff;
+    padding: 1em 0;
+    text-align: left;
+    text-indent: 2cm;
+}
+
+nav {
+    background-color: #f3ada5; 
+    color: #fff;
+    padding: 0.5em 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #e2968d; 
+}
+
+.container {
+    width: 80%;
+    margin:auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #ffc1ba; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.hero {
+    background-image: url('sea.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #e2d1d1;
+    text-align: center;
+    padding: 100px 0;
+    background-color: rgba(210, 180, 140, 0.7); 
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.feature {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #D2B48C; 
+    border-radius: 5px;
+    margin: 0 10px;
+    background-color: #fff; 
+}
+
+.feature h3 {
+    margin-top: 0;
+    color: #ffc2c2 
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #feccc7;
+    color: #8c8c8c;
+    margin-top: 30px;
+}
+
+.content h2, .content p {
+    color: #555;
+}
