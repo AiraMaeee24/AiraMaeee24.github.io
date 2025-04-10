@@ -1,0 +1,159 @@
+body {
+    font-family: Playfair Display;
+    margin: auto;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+header {
+    background-color: #feccc7;
+    color: #fff;
+    padding: 1em 0;
+    text-align: left;
+    text-indent: 2cm;
+}
+
+nav {
+    background-color: #f3ada5;
+    color: #fff;
+    padding: 0.5em 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    border-radius: 5px;
+}
+
+
+nav a:hover {
+    background-color: #e2968d;
+}
+
+.container {
+    padding: 20px;
+    background-color: #ffc1ba;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.hero {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image-container {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+    border: 5px solid #f3ada5;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-image-container img {
+    width: 130%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.about {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 80%;
+    margin: 30px auto 0;
+}
+
+.about h2 {
+    color: #555;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.about p {
+    line-height: 1.6;
+}
+
+.projects {
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 80%;
+    margin: 30px auto 0;
+}
+
+.projects h2 {
+    color: #555;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+.contact {
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+    border: 1px solid #D2B48C;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 80%;
+    margin: 30px auto 0;
+}
+
+.contact h2 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #feccc7;
+    color: #ffffff;
+    margin-top: 30px;
+}
+
+.content h2,
+.content p {
+    color: #555;
+}
