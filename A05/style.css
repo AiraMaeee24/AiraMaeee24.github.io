@@ -1,0 +1,267 @@
+body {
+    font-family: Playfair Display;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.home-overlay {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 10;
+    padding: 10px;
+}
+
+.home-overlay a {
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+.home-overlay h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.full-screen-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #444;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: initial;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+}
+
+.section-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #e4724d; 
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+#home {
+    background-image: url('../A05/img/norway.webp');
+    background-size: cover;
+    background-position: center;
+    color: white; 
+}
+
+#home .section-title,
+#home .section-subtitle {
+    color: white;
+}
+
+#home .overlay {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+#fjords {
+    background-color: #fde5d8; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.fjord-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px;
+    text-align: left;
+    border: 1px solid #f9d1c1; 
+}
+
+.fjord-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #f9d1c1;
+}
+
+.fjord-card-body {
+    padding: 1.5rem;
+}
+
+.fjord-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #e4724d; 
+}
+
+.navbar {
+    background: rgba(254, 204, 199, 0.8); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: #444 !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #444 !important;
+    margin-left: 1rem;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #222 !important;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#northern-lights {
+    background-color: #fcd8cc; 
+    color: #444;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.nl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nl-grid img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid #f9d1c1;
+}
+
+.nl-grid img:hover {
+    transform: scale(1.03);
+}
+
+#cities {
+    background-color: #ffebe1; 
+    color: #444;
+    padding-top: 80px;
+}
+
+.city-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.city-image {
+    flex: 0 0 40%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f9d1c1;
+}
+
+.city-image img {
+    width: 260px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.city-image img:hover {
+    transform: scale(1.03);
+}
+
+.city-text {
+    flex: 1;
+    padding-left: 2rem;
+}
+
+.city-title {
+    font-size: 2rem;
+    color: #e4724d;
+    margin-bottom: 0.5rem;
+}
+
+#culture {
+    background-image: url('../A05/img/norwayheritage.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+#culture .culture-content {
+    background-color: rgba(254, 204, 199, 0.7); 
+}
+
+.culture-content {
+    padding: 3rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.culture-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #e4724d;
+}
+
+.footer {
+    background-color: #f9d1c1; 
+    color: #444;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .section-subtitle {
+        font-size: 1.2rem;
+    }
+    .city-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .city-image {
+        width: 80%;
+        margin: 0 auto 1rem;
+    }
+    .city-text {
+        padding-left: 0;
+    }
+}
