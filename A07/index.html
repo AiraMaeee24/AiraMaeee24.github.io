@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A07</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="shortcut icon" type="x-icon" href="../logo.png">
+    <style>
+        body {
+            background: url('../A07/Disney.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: sans-serif;
+            color: white;
+        }
+
+        .home-button-container {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .header {
+            font-family: 'Waltograph';
+            color: #ffe658;
+            padding: 1rem;
+            text-align: center;
+            font-size: 5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.829);
+            border: 3px solid #4169e1;
+            margin-bottom: 50px;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            color: #333;
+
+        }
+
+        .picture-container {
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            border: 2px solid #ffd700;
+        }
+
+        .picture-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn-disney {
+            background: linear-gradient(to right, #ffd700, #ffcc00);
+            color: #003366;
+            border: none;
+            font-weight: bold;
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+        }
+
+        .btn-disney:hover {
+            background: linear-gradient(to right, #ffcc00, #ff9900);
+            color: white;
+        }
+
+        input.form-control {
+            font-family: 'Arial Rounded MT Bold', sans-serif;
+            border: 2px solid #4169e1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home-button-container position-absolute top-0 start-0 m-3">
+        <a href="../index.html" class="btn btn-disney text-white rounded-3 px-4 py-2">Home</a>
+    </div>
+
+        <div class="header">Disney Characters</div>
+
+        <div class="container mt-5 position-relative">
+            <div class="row justify-content-center">
+                <div class="card rounded-5 p-3 mx-auto text-center" style="max-width: 500px">
+                    <form>
+                        <input type="text" class="form-control rounded-5 p-2 mb-3" id="characterSearch"
+                            placeholder="Enter Disney character name...">
+                        <input onclick="getCharacter()" type="button"
+                            class="btn btn-disney text-white rounded-5 py-2 px-4 mt-2" value="Search">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-3" id="characterMainContainer" style="display: none;">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card p-5 rounded-3 shadow">
+                        <div class="picture-container mx-auto" id="picture-container">
+                            <img src="" id="img" alt="Character Image">
+                        </div>
+                        <div class="mt-4 h5" id="name">Character Name</div>
+                        <div class="mt-2 mb-3 p-2" id="movie">Movie</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const getCharacter = async () => {
+                document.getElementById("characterMainContainer").style.display = "none";
+                const characterNameSearch = document.getElementById("characterSearch").value.trim();
+
+                if (!characterNameSearch) return;
+
+                try {
+                    const response = await fetch("https://api.disneyapi.dev/character?name=" + encodeURIComponent(characterNameSearch));
+                    const data = await response.json();
+
+                    const character = data.data && data.data.length > 0 ? data.data[0] : null;
+
+                    if (character) {
+                        document.getElementById("characterMainContainer").style.display = "block";
+
+                        document.getElementById("img").src = character.imageUrl || "https://via.placeholder.com/200";
+                        document.getElementById("name").innerText = character.name;
+                        document.getElementById("movie").innerText = character.films.length > 0
+                            ? "Movie(s): " + character.films.join(", ")
+                            : "No movie information available.";
+                    } else {
+                        alert("Character not found.");
+                    }
+                } catch (error) {
+                    console.error("Error fetching character data:", error);
+                    alert("Something went wrong. Please try again later.");
+                }
+            };
+
+        </script>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+
+</html>
