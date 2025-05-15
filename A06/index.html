@@ -80,46 +80,57 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const buttons = document.querySelectorAll('.buttons button');
+
             buttons.forEach(button => {
                 button.addEventListener('click', function () {
-                    filterGallery(this.textContent.toLowerCase());
-                });
-                const galleryItems = document.querySelectorAll('.gallery-item img');
-
-                galleryItems.forEach(img => {
-                    const setAspectRatio = () => {
-                        const aspectRatio = img.naturalWidth / img.naturalHeight;
-                        img.parentNode.style.setProperty('--aspect-ratio', aspectRatio);
-                    };
-                    img.onload = setAspectRatio;
-                    if (img.complete) {
-                        setAspectRatio();
-                    }
+                    const category = this.textContent.trim().toLowerCase();
+                    filterGallery(category);
                 });
             });
+
+            var gallery = document.getElementById('imageGallery');
+
+            imageData.forEach(function (item) {
+                var div = document.createElement('div');
+                div.classList.add('item', item.category, 'gallery-item');
+
+                var img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.alt;
+                img.onclick = function () { openModal(this); };
+
+                div.appendChild(img);
+                gallery.appendChild(div);
+            });
+
             filterGallery('all');
         });
+
     </script>
 </head>
 
-<body>
-    <header>
-        <div class="home-button-container">
-            <div onmouseover="homeMouseEnter()" onmouseleave="homeMouseLeave()" id="homeButton"
-                class="card p-2 rounded-3">
-                <a href="../index.html">Home</a>
+<body id="body" data-bs-theme="light">
+    <header class="py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <a href="../index.html" class="btn btn-dark" id="homeButton">Home</a>
             </div>
+
+            <h1 class="m-0 justify-content-between flex-grow-1">My Faves</h1>
+
+            <div style="width: 75px;"></div>
         </div>
-        <div class="header-content">
-            <div class="container">
-                <h1>My Faves</h1>
+
+        <div class="container mt-3 d-flex justify-content-between align-items-center flex-wrap">
+            <div class="buttons d-flex gap-2 flex-wrap">
+                <button class="btn btn-outline-secondary">All</button>
+                <button class="btn btn-outline-secondary">Skies</button>
+                <button class="btn btn-outline-secondary">Food</button>
+                <button class="btn btn-outline-secondary">People</button>
             </div>
-            <div class="buttons">
-                <button>All</button>
-                <button>Skies</button>
-                <button>Food</button>
-                <button>People</button>
-            </div>
+            <button id="colorBtn" onclick="changeMode()" class="btn btn-dark mt-2 mt-md-0">
+                Dark Mode
+            </button>
         </div>
     </header>
 
@@ -131,25 +142,50 @@
         <img id="modal-img" class="modal-content">
         <div id="caption"></div>
     </div>
-    <div class="container-fluid p-3" id="footerShow">
+    <div class="container-fluid p-3 bg-body text-body rounded mt-4" id="footerShow">
         <div class="row">
             <div class="col">
-                <div class="text-center" onclick="showFooter()" style="color: #333">ShowFooter</div>
+                <div class="text-center" onclick="showFooter()" class="text-body">ShowFooter</div>
             </div>
         </div>
     </div>
 
-    <div class="container p-2" id="footer" style="background-color: rgb(240, 240, 240); color: #707070; display: none;">
+    <div class="container p-2 bg-body text-body" id="footer" style="display: none;">
         <div class="row">
             <div class="col">
                 <div class="h5 my-3">
                     Enjoying precious moments with these wonderful people!<3 </div>
-                        <div class="mt-3 text-center" onclick="hideFooter()" style="color: #333">Hide</div>
+                        <div class="mt-3 text-center text-body" onclick="hideFooter()">Hide</div>
                 </div>
             </div>
         </div>
 
         <script>
+            var mode = "light";
+            function changeMode() {
+                var body = document.getElementById("body");
+                var colorBtn = document.getElementById("colorBtn");
+                var homeButton = document.getElementById("homeButton");
+                var footerShow = document.getElementById("footerShow");
+                mode = mode == "light" ? "dark" : "light";
+
+                var btnText = mode == "dark" ? "Light Mode" : "Dark Mode";
+                var btnClass = mode == "dark" ? "btn-light" : "btn-dark";
+
+                colorBtn.classList.remove("btn-light", "btn-dark");
+                colorBtn.classList.add(btnClass);
+                colorBtn.innerHTML = btnText;
+
+                homeButton.classList.remove("btn-light", "btn-dark");
+                homeButton.classList.add(btnClass);
+
+                footerShow.classList.remove("btn-light", "btn-dark");
+                footerShow.classList.add(btnClass);
+
+                body.setAttribute("data-bs-theme", mode);
+            }
+
+
             var imageData = [
                 { category: 'food', src: '../A06/img/food1.jpg', alt: 'Food' },
                 { category: 'food', src: '../A06/img/food11.jpg', alt: 'Food' },
@@ -183,20 +219,6 @@
                 { category: 'people', src: '../A06/img/people14.jpg', alt: 'People' }
             ];
 
-            var gallery = document.getElementById('imageGallery');
-
-            imageData.forEach(function (item) {
-                var div = document.createElement('div');
-                div.classList.add('item', item.category, 'gallery-item');
-
-                var img = document.createElement('img');
-                img.src = item.src;
-                img.alt = item.alt;
-                img.onclick = function () { openModal(this); };
-
-                div.appendChild(img);
-                gallery.appendChild(div);
-            });
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
