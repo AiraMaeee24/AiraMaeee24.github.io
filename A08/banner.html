@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="parallax.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="shortcut icon" type="x=icon" href="../logo.png">
+    <title>Barbie</title>
+</head>
+
+<body>
+  <div class="home-button-container position-absolute top-0 start-0 m-3" id="home">
+        <a href="../index.html" class="btn btn-home text-white rounded-3 px-4 py-2">Home</a>
+    </div>
+  <section class="parallax">
+    <div class="parallax-overlay">
+      <div class="keyart" id="parallax">
+        <div class="keyart_layer parallax" id="keyart-0" data-speed="2"></div>
+        <div class="keyart_layer parallax" id="keyart-1" data-speed="5"></div>
+        <div class="keyart_layer parallax" id="keyart-2" data-speed="11"></div>
+        <div class="keyart_layer parallax" id="keyart-3" data-speed="16"></div>
+        <div class="keyart_layer parallax" id="keyart-4" data-speed="26"></div>
+        <div class="keyart_layer parallax" id="keyart-5" data-speed="36"></div>
+        <div class="keyart_layer parallax" id="keyart-6" data-speed="60"></div>
+        <div class="keyart_layer parallax" id="keyart-7" data-speed="50"></div>
+        <div class="keyart_layer" id="keyart-8" data-speed="100"></div>
+      </div>
+    </div>
+  </section>
+
+  <header>
+    <h1>Barbie Movie 2023</h1>
+    <p>"Dream Big. Shine Bright. Be You."</p>
+  </header>
+
+  <main>
+    <section class="synopsis">
+      <h2 style="text-align:center; font-family:'Pacifico', cursive; color:#d6328a; font-size:2rem; margin-bottom:1rem;">
+        Movie Synopsis</h2>
+      <p>
+        Step into the dazzling world of Barbie in her newest cinematic adventure! Join Barbie and her friends as they
+        journey through a vibrant land of dreams, friendship, and courage. From magical moments to heartfelt lessons,
+        this 2023 movie celebrates empowerment and the joy of being exactly who you are.
+      </p>
+    </section>
+
+    <section class="characters">
+      <h2>Main Characters</h2>
+      <div class="character-grid">
+        <div class="character-card" tabindex="0" aria-label="Barbie - The confident dreamer">
+          <img src="../A08/img/barbie.jpg" alt="Barbie" />
+          <div class="character-name">Barbie</div>
+          <div class="character-desc">The confident, kind-hearted dreamer who believes in magic and friendship.</div>
+        </div>
+        <div class="character-card" tabindex="0" aria-label="Ken - The supportive best friend">
+          <img src="../A08/img/ken.jpg" alt="Ken" />
+          <div class="character-name">Ken</div>
+          <div class="character-desc">Barbie's loyal friend and cheerleader who always supports her wildest dreams.</div>
+        </div>
+        <div class="character-card" tabindex="0" aria-label="Gloria - The empowering mentor">
+          <img src="../A08/img/gloria.jpg" alt="Gloria" />
+          <div class="character-name">Gloria</div>
+          <div class="character-desc">A strong-willed and compassionate woman who rediscovers her voice and inspires Barbie to embrace her true self.
+          </div>
+        </div>
+        <div class="character-card" tabindex="0" aria-label="Midge - The quirky and lovable friend">
+          <img src="../A08/img/midge.jpg" alt="Midge" />
+          <div class="character-name">Midge</div>
+          <div class="character-desc">Barbie's sweet and supportive pregnant friend who brings warmth, humor, and a touch of nostalgia to the group.</div>
+        </div>
+        <div class="character-card" tabindex="0" aria-label="Allan - The underrated ally">
+          <img src="../A08/img/allan.jpg" alt="Allan" />
+          <div class="character-name">Allan</div>
+          <div class="character-desc">Ken's loyal but often overlooked friend who proves himself as a surprisingly resourceful and supportive companion in Barbie Land.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trailer">
+      <h2>Official Trailer</h2>
+      <div class="video-wrapper" role="region" aria-label="Barbie movie 2023 official trailer">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pBk4NYhWNMM?si=mpPo6zKhGjjAVjcn" 
+		title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+		referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <a class="watch-btn" href="https://www.max.com/ph/en/movies/barbie/80bc4915-c826-499f-9961-b422b17559b6?utm_source=universal_search" target="_blank" rel="noopener noreferrer"
+        aria-label="Watch Barbie Movie 2023 on Netflix">Watch Now</a>
+    </section>
+  </main>
+
+  <a href="#home" class="go-up-btn" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+  <footer>
+    <p>“Be silly, be honest, be kind.” — Barbie 2023</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="js/parallax.js"></script>
+</body>
+
+</html>

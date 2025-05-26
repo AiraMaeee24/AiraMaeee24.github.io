@@ -1,0 +1,235 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(135deg, #ff8cc6 0%, #ffb3d9 100%);
+	color: #4b0079;
+	min-height: 100vh;
+}
+
+.home-button-container {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	border: #4b0079;
+	transition: background-color 0.3s ease;
+}
+
+.btn-home {
+	background: linear-gradient(135deg, #ff8cc6 0%, #ffb3d9 100%);
+	margin: 2rem;
+	padding: 1rem;
+	border: #4b0079;
+	border-radius: 1rem;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.btn-home:hover {
+	background: llinear-gradient(135deg, #ff8cc6 0%, #ffb3d9 100%);
+	color: white;
+}
+
+.parallax-section {
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+}
+
+.main-content {
+	margin-top: 100vh;
+	padding: 2rem 1rem;
+	max-width: 1080px;
+	margin-left: auto;
+	margin-right: auto;
+	background: rgba(255, 255, 255, 0.85);
+	border-radius: 20px;
+	box-shadow: 0 0 30px rgba(255, 77, 166, 0.5);
+	z-index: 1;
+	position: relative;
+}
+
+header {
+	background: #ff4da6;
+	padding: 2rem 1rem;
+	text-align: center;
+	box-shadow: 0 4px 15px rgba(255, 77, 166, 0.4);
+}
+
+header h1 {
+	font-family: 'Pacifico', cursive;
+	font-size: 3rem;
+	margin: 0;
+	letter-spacing: 3px;
+	text-shadow: 1px 1px #ba2e74;
+}
+
+header p {
+	font-weight: 600;
+	font-size: 1.2rem;
+	margin-top: 0.5rem;
+	color: #fff;
+	font-style: italic;
+	letter-spacing: 1px;
+}
+
+section.synopsis {
+	max-width: 720px;
+	margin: 0 auto 3rem auto;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: #531778;
+}
+
+section.characters {
+	margin-bottom: 3rem;
+}
+
+section.characters h2 {
+	font-family: 'Pacifico', cursive;
+	text-align: center;
+	font-size: 2.5rem;
+	color: #d6328a;
+	margin-bottom: 1rem;
+	text-shadow: 1px 1px #ba2e74;
+}
+
+.character-grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.6rem;
+	justify-content: center;
+}
+
+.character-card {
+	background: #ffe4f3;
+	border-radius: 15px;
+	box-shadow: 0 4px 12px rgba(217, 74, 138, 0.3);
+	width: 180px;
+	text-align: center;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+	transform: scale(1.05);
+	box-shadow: 0 6px 18px rgba(217, 74, 138, 0.6);
+}
+
+.character-card img {
+	width: 100%;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	display: block;
+}
+
+.character-name {
+	font-weight: 700;
+	font-size: 1.2rem;
+	margin: 0.8rem 0 0.3rem 0;
+	color: #a31972;
+}
+
+.character-desc {
+	font-size: 0.9rem;
+	margin: 0 0 1rem 0;
+	padding: 0 0.8rem;
+	color: #6a206c;
+}
+
+section.trailer {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+section.trailer h2 {
+	font-family: 'Pacifico', cursive;
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	color: #d6328a;
+	text-shadow: 1px 1px #ba2e74;
+}
+
+.video-wrapper {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	padding-bottom: 20%;
+	height: 0;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 6px 20px rgba(255, 77, 166, 0.5);
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.watch-btn {
+	display: inline-block;
+	margin-top: 1.5rem;
+	background: #ff1a75;
+	color: white;
+	padding: 0.8rem 2rem;
+	font-weight: 600;
+	font-size: 1.2rem;
+	border-radius: 30px;
+	text-decoration: none;
+	box-shadow: 0 4px 12px rgba(255, 26, 117, 0.7);
+	transition: background 0.3s ease;
+}
+
+.watch-btn:hover {
+	background: #d6005c;
+}
+
+.go-up-btn {
+	position: fixed;
+	bottom: 80px;
+	right: 30px;
+	background: linear-gradient(135deg, #ff8cc6 0%, #ffb3d9 100%);
+	color: white;
+	padding: 10px 18px;
+	border-radius: 100%;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.go-up-btn:hover {
+	background: linear-gradient(135deg, #ff8cc6 0%, #ffb3d9 100%);
+	transform: scale(1.1);
+}
+
+footer {
+	background: #ff4da6;
+	text-align: center;
+	padding: 1rem 1rem;
+	color: white;
+	font-style: italic;
+	box-shadow: 0 -4px 15px rgba(255, 77, 166, 0.4);
+	font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+	.character-grid {
+		justify-content: center;
+	}
+
+	.character-card {
+		width: 140px;
+	}
+}
